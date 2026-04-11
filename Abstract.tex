@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{titlesec}
+
+\title{\textbf{Fast Fourier Transform (FFT) Implementation and Its Applications}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% =========================
+% Team Section
+% =========================
+\section*{Team Members}
+\begin{itemize}
+    \item Abdelrahman Abdelrassoul -- ID: 202300056
+    \item Ahmed Mohammady -- ID: 202301826
+    \item Ali Ashraf -- ID: 202301812
+\end{itemize}
+
+% =========================
+% Abstract
+% =========================
+\section*{Abstract}
+
+The Fast Fourier Transform (FFT) is one of the most important numerical algorithms in computational science, enabling efficient transformation of signals from the time domain to the frequency domain. The classical Discrete Fourier Transform (DFT) provides an analytical formulation for frequency analysis but suffers from high computational complexity of $O(N^2)$, making it inefficient for large-scale problems. The FFT significantly improves performance by reducing complexity to $O(N \log N)$ through recursive decomposition techniques.
+
+This project aims to implement and analyze the FFT algorithm as a numerical method, compare it with the analytical DFT formulation, and investigate its efficiency and accuracy. In addition, the project explores practical applications of FFT in signal processing, frequency analysis, and image processing. Special emphasis is placed on image processing applications due to their relevance in artificial intelligence, including tasks such as filtering, compression, and feature extraction.
+
+The study will involve simulation using Python to evaluate computational performance, analyze parameter effects such as signal size and noise levels, and demonstrate real-world applications. The results will highlight the importance of FFT as a fundamental tool in modern numerical analysis and AI-related fields.
+
+\pagebreak
+
+% =========================
+% Applications Overview
+% =========================
+\section*{Proposed Applications}
+
+\subsection*{1. Signal Filtering and Noise Reduction}
+FFT will be used to transform signals into the frequency domain, where noise components can be identified and removed. The filtered signal will then be reconstructed using the inverse transform. This demonstrates how FFT is applied in real-world systems such as communication and audio processing.
+
+\subsection*{2. Frequency Analysis and Feature Detection}
+FFT enables identification of dominant frequency components within a signal. This application is widely used in engineering and scientific analysis, including vibration analysis, biomedical signals, and speech processing.
+
+\subsection*{3. Image Processing (AI-Focused Application)}
+In image processing, the FFT extends to two-dimensional data, allowing images to be analyzed in the frequency domain. This application is highly relevant to artificial intelligence and computer vision.
+
+Using 2D FFT, images can be:
+\begin{itemize}
+    \item Filtered to remove noise (low-pass and high-pass filtering)
+    \item Enhanced by emphasizing edges and textures
+    \item Compressed by removing less significant frequency components
+\end{itemize}
+
+These techniques are foundational in AI tasks such as feature extraction, pattern recognition, and preprocessing for deep learning models. The project will explore how FFT improves efficiency in handling large image data and contributes to modern AI pipelines.
+
+% =========================
+% End
+% =========================
+
+\end{document}
