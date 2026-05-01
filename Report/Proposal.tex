@@ -1,0 +1,159 @@
+\documentclass{zc-ust-hw} 
+
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\name{Ali Ashraf,
+Abdelrahman Mohamed,
+Ahmed Mohamady,
+}
+\id{202301812,
+202300056,
+202301826
+}
+\course{MATH307}
+\assignment{\textbf{Fast Fourier Transform (FFT) Implementation and Its Applications.}}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\pagebreak
+
+\section{Abstract}
+The Fast Fourier Transform (FFT) is a fundamental numerical algorithm that efficiently converts signals from the time domain to the frequency domain, significantly improving upon the classical Discrete Fourier Transform (DFT), which has a computational complexity of \(O(N^2)\). By exploiting symmetry and recursive decomposition, the FFT reduces this complexity to \(O(N \log N)\), making it suitable for large-scale computational problems.
+
+This project focuses on implementing and analyzing the FFT as a numerical method, comparing it with the analytical DFT in terms of computational efficiency and numerical accuracy. In addition, the study explores practical applications of FFT in signal processing, frequency analysis, and image processing. Special emphasis is placed on image processing due to its relevance in artificial intelligence, particularly in tasks such as filtering, compression, and feature extraction.
+
+Using Python-based simulations, the study evaluates algorithm performance under varying conditions such as signal size and noise levels. The results demonstrate the FFT’s critical role as a foundational tool in modern numerical analysis and AI-related applications.
+
+\section{Introduction}
+Frequency-domain analysis is a fundamental tool in engineering, physics, and computer science. The Discrete Fourier Transform (DFT) provides a mathematical framework for decomposing a discrete signal into its frequency components. For a signal of length \(N\), the DFT is defined as:
+
+\begin{equation}
+X_k = \sum_{n=0}^{N-1} x_n e^{-i 2\pi kn/N}, \quad k = 0,1,\dots,N-1
+\end{equation}
+
+Despite its theoretical importance, the DFT suffers from a computational complexity of \(O(N^2)\), which becomes impractical for large datasets. The Fast Fourier Transform (FFT), introduced by Cooley and Tukey, addresses this limitation by recursively decomposing the DFT into smaller subproblems, reducing the complexity to \(O(N \log N)\).
+
+The FFT has become a cornerstone in modern computational systems, enabling real-time signal processing, efficient data compression, and large-scale numerical simulations. Its applications extend to artificial intelligence, where frequency-domain representations are widely used in preprocessing, feature extraction, and image enhancement.
+
+This project investigates the FFT as a numerical method, bridging theoretical formulation with practical implementation and real-world applications.
+
+\section{Problem Definition}
+The objective of this project is to efficiently compute the frequency representation of discrete signals and images while minimizing computational cost and maintaining numerical accuracy.
+
+Given a discrete signal:
+\[
+x = \{x_0, x_1, \dots, x_{N-1}\}
+\]
+
+the DFT is defined as:
+
+\begin{equation}
+X_k = \sum_{n=0}^{N-1} x_n e^{-i 2\pi kn/N}
+\end{equation}
+
+The computational challenge arises from the quadratic complexity of this formulation. The FFT resolves this by dividing the problem into smaller subproblems using even-odd decomposition, significantly improving performance.
+
+For two-dimensional data (images), the transformation extends to:
+
+\begin{equation}
+X(u,v) = \sum_{m=0}^{M-1} \sum_{n=0}^{N-1} x(m,n)e^{-i2\pi\left(\frac{um}{M}+\frac{vn}{N}\right)}
+\end{equation}
+
+Key variables include:
+\begin{itemize}
+    \item \(x_n\): input signal samples
+    \item \(X_k\): frequency-domain representation
+    \item \(N\): number of samples
+    \item \(M, N\): image dimensions
+    \item \(i\): imaginary unit
+\end{itemize}
+
+The problem is therefore to achieve efficient computation while enabling applications such as filtering, noise reduction, and feature extraction.
+
+\section{Methodology}
+The project follows a numerical and experimental approach consisting of implementation, analysis, and application.
+
+\subsection{Algorithm Implementation}
+\begin{itemize}
+    \item Implement the DFT directly using its mathematical definition
+    \item Implement the FFT using the Cooley--Tukey recursive algorithm
+    \item Extend the FFT to two-dimensional data for image processing
+\end{itemize}
+
+\subsection{Computational Analysis}
+\begin{itemize}
+    \item Measure execution time for DFT and FFT for varying input sizes
+    \item Analyze time complexity and verify \(O(N \log N)\) behavior
+    \item Compare numerical accuracy between DFT and FFT outputs
+\end{itemize}
+
+\subsection{Simulation Tools}
+\begin{itemize}
+    \item Python as the main programming environment
+    \item NumPy for numerical operations and FFT validation
+    \item Matplotlib for visualization
+    \item OpenCV/PIL for image processing tasks
+\end{itemize}
+
+\subsection{Applications}
+\subsubsection{Signal Filtering and Noise Reduction}
+Signals are transformed into the frequency domain, where noise components are removed using filters. The cleaned signal is reconstructed using the inverse FFT.
+
+\subsubsection{Frequency Analysis and Feature Detection}
+FFT is used to identify dominant frequency components, enabling analysis of periodic behavior in engineering and scientific applications.
+
+\subsubsection{Image Processing (AI-Focused Application)}
+The FFT is extended to two-dimensional data, allowing images to be analyzed in the frequency domain. Applications include:
+\begin{itemize}
+    \item Noise removal using low-pass filters
+    \item Edge enhancement using high-pass filters
+    \item Image compression by removing insignificant frequencies
+\end{itemize}
+
+These techniques are fundamental in artificial intelligence pipelines, particularly in feature extraction and preprocessing for deep learning models.
+
+\section{Results}
+Preliminary results indicate a significant reduction in execution time when using FFT compared to the direct DFT, especially for large input sizes. Initial image processing experiments demonstrate effective noise reduction while preserving key structural features.
+
+Further results will include:
+\begin{itemize}
+    \item Execution time comparisons
+    \item Error analysis between DFT and FFT
+    \item Visual results of image filtering and enhancement
+\end{itemize}
+
+\section{References}
+\begin{thebibliography}{99}
+
+\bibitem{cooley1965}
+J. W. Cooley and J. W. Tukey,
+``An Algorithm for the Machine Calculation of Complex Fourier Series,''
+\textit{Mathematics of Computation}, 1965.
+
+\bibitem{oppenheim}
+A. V. Oppenheim and R. W. Schafer,
+\textit{Discrete-Time Signal Processing},
+Pearson, 2010.
+
+\bibitem{smith}
+S. W. Smith,
+\textit{The Scientist and Engineer's Guide to Digital Signal Processing},
+California Technical Publishing, 1997.
+
+\bibitem{gonzalez}
+R. C. Gonzalez and R. E. Woods,
+\textit{Digital Image Processing},
+Pearson, 2018.
+
+\bibitem{numpy}
+NumPy Documentation, FFT Module.
+
+\bibitem{opencv}
+OpenCV Documentation, Image Processing.
+
+\end{thebibliography}
+
+\end{document}
