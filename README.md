@@ -82,3 +82,22 @@ This project focuses on the implementation and analysis of the Fast Fourier Tran
 | OpenCV/PIL| Image processing             |
 
 ---
+
+## Project Outputs
+
+- Final report: `Report/FinalReport.tex` and `Report/FinalReport.pdf`
+- Presentation: `Presentation/`
+- Experiment code: `experiments/fft_experiments.py`
+- Generated plots and result tables: `Report/generated/`
+
+---
+
+## Reproduce Results
+
+Run the experiment script from the repository root:
+
+```bash
+python experiments/fft_experiments.py
+```
+
+This regenerates the benchmark results, signal filtering plots, image processing plots, and compression analysis used in the final report.
